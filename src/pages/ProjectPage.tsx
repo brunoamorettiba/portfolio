@@ -2,7 +2,7 @@ import { FadeIn } from "../components/FadeIn";
 import { Section } from "../components/Section";
 import { Footer } from "../components/Footer";
 import { projects } from "../data/projects";
-import { ArrowLeft, Megaphone, Play } from "lucide-react";
+import { ArrowLeft, Megaphone, Play, Smartphone } from "lucide-react";
 
 export function ProjectPage({
   slug,
@@ -85,6 +85,44 @@ export function ProjectPage({
             ))}
           </div>
         </Section>
+
+        {/* Shorts Section */}
+        {project.shorts && project.shorts.length > 0 && (
+          <Section>
+            <FadeIn>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
+                  <Smartphone size={18} className="text-emerald-600" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold tracking-tight">
+                    Short-form clips
+                  </h2>
+                  <p className="text-sm text-black/40">
+                    Vertical clips cut from the episodes
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              {project.shorts.map((videoId, i) => (
+                <FadeIn key={videoId} delay={(i % 4) * 0.1}>
+                  <div className="aspect-[9/16] rounded-2xl overflow-hidden border border-black/5 shadow-sm bg-neutral-900">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${videoId}`}
+                      title={`${project.name} - Short ${i + 1}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      loading="lazy"
+                      className="w-full h-full"
+                    />
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </Section>
+        )}
 
         {/* Ads Section */}
         {project.ads && project.ads.length > 0 && (

@@ -12,6 +12,7 @@ export interface Project {
   description: string;
   gradient: string;
   videos: string[]; // YouTube video IDs
+  shorts?: string[]; // Optional vertical YouTube Shorts IDs
   ads?: ProjectAd[]; // Optional ads section
 }
 
@@ -31,6 +32,51 @@ export interface ReelItem {
 }
 
 export const projects: Project[] = [
+  {
+    slug: "hatch",
+    name: "Hatch — B2B Video Podcasts",
+    year: 2024,
+    description:
+      "Since November 2024 I've been a Senior Video Editor at Hatch. I edit full-length video podcasts for B2B brands and shows such as Building Brand Advocacy, Exit Five and Metaview, cut each episode into short-form clips for social media, and create motion graphics and animations in After Effects.",
+    gradient: "from-cyan-500 to-cyan-700",
+    videos: [
+      "PMMyeoObo50",
+      "SLiJfwqbeyA",
+      "1uv_pQeKkvo",
+      "1JR7ttY5cnU",
+      "jiiTsEasIVY",
+      "3a75KhSwh6I",
+    ],
+    shorts: [
+      "jXLCsypVyIo",
+      "aUHbHAJPjbA",
+      "VSJxxy4_89M",
+      "j_FYSgazMO0",
+      "hVRAfuTNh-M",
+      "R_2mu8m703w",
+      "IXlREzyWtjs",
+      "ytRQ2PXZBcM",
+      "dZorjtvuqwk",
+      "q4lcn0yxSDM",
+      "KXAwKImbhfQ",
+      "bL_EOMJx0bs",
+      "dDVF0UgWzVM",
+      "W6e2OrZyQAQ",
+      "qcRWQ3CFtws",
+      "rfjOBcQMTSY",
+      "tpkkb-QwTH8",
+      "8hdBjmHRvPI",
+    ],
+  },
+  {
+    slug: "clay-hubspot",
+    name: "Clay & HubSpot",
+    year: 2026,
+    description:
+      "Long-form YouTube videos for B2B software brands: The Science of Scaling (HubSpot) and Clay Originals (Clay). My work covered video editing, storytelling, pacing, B-roll selection, music and sound design, from a day-in-the-life episode to educational breakdowns.",
+    gradient: "from-indigo-500 to-indigo-700",
+    videos: ["yybIRmF83ek", "AbzSzCEQL0k", "T5mbscgOlRw", "xyHrohZTFtg"],
+  },
   {
     slug: "shorts-reels",
     name: "Shorts / Reels",
