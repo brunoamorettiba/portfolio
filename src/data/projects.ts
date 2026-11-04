@@ -5,6 +5,13 @@ export interface ProjectAd {
   horizontal?: boolean; // true for 16:9 (default), false for vertical
 }
 
+export interface LocalVideo {
+  title: string;
+  src: string;
+  thumbnail: string;
+  vertical?: boolean;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -14,6 +21,7 @@ export interface Project {
   videos: string[]; // YouTube video IDs
   shorts?: string[]; // Optional vertical YouTube Shorts IDs
   ads?: ProjectAd[]; // Optional ads section
+  localVideos?: LocalVideo[];
 }
 
 export type Platform = "instagram" | "tiktok" | "youtube";
@@ -85,6 +93,34 @@ export const projects: Project[] = [
       "Short-form content edited for multiple platforms including YouTube Shorts, Instagram Reels, and TikTok.",
     gradient: "from-emerald-500 to-emerald-700",
     videos: [],
+  },
+  {
+    slug: "ai-video-editing",
+    name: "AI Video Editing",
+    year: 2024,
+    description:
+      "AI-powered video editing projects including UGC content with AI-generated subtitles, a short-form piece exploring AI's impact on creative jobs, and a product demo with motion graphics and animation.",
+    gradient: "from-violet-500 to-fuchsia-600",
+    videos: [],
+    localVideos: [
+      {
+        title: "UGC Short — AI Subtitles",
+        src: "/videos/ugc-short.mp4",
+        thumbnail: "/thumbnails/ai-ugc-short.jpg",
+        vertical: true,
+      },
+      {
+        title: "AI Will Take Your Job",
+        src: "/videos/ai-will-take-your-job.mp4",
+        thumbnail: "/thumbnails/ai-will-take-your-job.jpg",
+        vertical: true,
+      },
+      {
+        title: "Liany — Product Demo",
+        src: "/videos/liany-demo.mp4",
+        thumbnail: "/thumbnails/ai-liany-demo.jpg",
+      },
+    ],
   },
   {
     slug: "uptin",

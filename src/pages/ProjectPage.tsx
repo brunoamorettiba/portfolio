@@ -2,7 +2,7 @@ import { FadeIn } from "../components/FadeIn";
 import { Section } from "../components/Section";
 import { Footer } from "../components/Footer";
 import { projects } from "../data/projects";
-import { ArrowLeft, Megaphone, Play, Smartphone } from "lucide-react";
+import { ArrowLeft, Megaphone, Play, Smartphone, Sparkles } from "lucide-react";
 
 export function ProjectPage({
   slug,
@@ -69,21 +69,83 @@ export function ProjectPage({
           </FadeIn>
 
           {/* Videos */}
-          <div className="grid grid-cols-1 gap-8">
-            {project.videos.map((videoId, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="aspect-video rounded-2xl overflow-hidden border border-black/5 shadow-sm">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${videoId}`}
-                    title={`${project.name} - Video ${i + 1}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full"
-                  />
+          {project.videos.length > 0 && (
+            <div className="grid grid-cols-1 gap-8">
+              {project.videos.map((videoId, i) => (
+                <FadeIn key={i} delay={i * 0.1}>
+                  <div className="aspect-video rounded-2xl overflow-hidden border border-black/5 shadow-sm">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${videoId}`}
+                      title={`${project.name} - Video ${i + 1}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          )}
+
+          {/* Local Videos */}
+          {project.localVideos && project.localVideos.length > 0 && (
+            <>
+              {/* Horizontal videos */}
+              {project.localVideos.filter((v) => !v.vertical).map((video, i) => (
+                <FadeIn key={video.src} delay={i * 0.1}>
+                  <div className="mb-8">
+                    <div className="aspect-video rounded-2xl overflow-hidden border border-black/5 shadow-sm bg-black">
+                      <video
+                        src={video.src}
+                        controls
+                        playsInline
+                        preload="metadata"
+                        poster={video.thumbnail}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <p className="mt-3 text-sm font-medium text-black/60">{video.title}</p>
+                  </div>
+                </FadeIn>
+              ))}
+
+              {/* Vertical videos (shorts) */}
+              {project.localVideos.some((v) => v.vertical) && (
+                <div className="mt-12">
+                  <FadeIn>
+                    <div className="flex items-center gap-3 mb-8">
+                      <div className="w-10 h-10 rounded-full bg-violet-500/10 flex items-center justify-center">
+                        <Sparkles size={18} className="text-violet-600" />
+                      </div>
+                      <div>
+                        <h2 className="text-2xl font-bold tracking-tight">Shorts</h2>
+                        <p className="text-sm text-black/40">AI-powered short-form content</p>
+                      </div>
+                    </div>
+                  </FadeIn>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
+                    {project.localVideos.filter((v) => v.vertical).map((video, i) => (
+                      <FadeIn key={video.src} delay={i * 0.1}>
+                        <div>
+                          <div className="aspect-[9/16] rounded-2xl overflow-hidden border border-black/5 shadow-sm bg-black">
+                            <video
+                              src={video.src}
+                              controls
+                              playsInline
+                              preload="metadata"
+                              poster={video.thumbnail}
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+                          <p className="mt-3 text-sm font-medium text-black/60">{video.title}</p>
+                        </div>
+                      </FadeIn>
+                    ))}
+                  </div>
                 </div>
-              </FadeIn>
-            ))}
-          </div>
+              )}
+            </>
+          )}
         </Section>
 
         {/* Shorts Section */}
