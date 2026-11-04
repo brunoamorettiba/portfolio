@@ -41,6 +41,43 @@ export interface ReelItem {
 
 export const projects: Project[] = [
   {
+    slug: "ai-video-editing",
+    name: "AI Video Editing",
+    year: 2024,
+    description:
+      "AI-powered video editing projects including UGC content with AI-generated subtitles, a short-form piece exploring AI's impact on creative jobs, and a product demo with motion graphics and animation.",
+    gradient: "from-violet-500 to-fuchsia-600",
+    videos: [],
+    localVideos: [
+      {
+        title: "UGC Short — AI Subtitles",
+        src: "/videos/ugc-short.mp4",
+        thumbnail: "/thumbnails/ai-ugc-short.jpg",
+        vertical: true,
+      },
+      {
+        title: "AI Will Take Your Job",
+        src: "/videos/ai-will-take-your-job.mp4",
+        thumbnail: "/thumbnails/ai-will-take-your-job.jpg",
+        vertical: true,
+      },
+      {
+        title: "Liany — Product Demo",
+        src: "/videos/liany-demo.mp4",
+        thumbnail: "/thumbnails/ai-liany-demo.jpg",
+      },
+    ],
+  },
+  {
+    slug: "shorts-reels",
+    name: "Shorts / Reels",
+    year: 2024,
+    description:
+      "Short-form content edited for multiple platforms including YouTube Shorts, Instagram Reels, and TikTok.",
+    gradient: "from-emerald-500 to-emerald-700",
+    videos: [],
+  },
+  {
     slug: "hatch",
     name: "Hatch — B2B Video Podcasts",
     year: 2024,
@@ -84,43 +121,6 @@ export const projects: Project[] = [
       "Long-form YouTube videos for B2B software brands: The Science of Scaling (HubSpot) and Clay Originals (Clay). My work covered video editing, storytelling, pacing, B-roll selection, music and sound design, from a day-in-the-life episode to educational breakdowns.",
     gradient: "from-indigo-500 to-indigo-700",
     videos: ["yybIRmF83ek", "AbzSzCEQL0k", "T5mbscgOlRw", "xyHrohZTFtg"],
-  },
-  {
-    slug: "shorts-reels",
-    name: "Shorts / Reels",
-    year: 2024,
-    description:
-      "Short-form content edited for multiple platforms including YouTube Shorts, Instagram Reels, and TikTok.",
-    gradient: "from-emerald-500 to-emerald-700",
-    videos: [],
-  },
-  {
-    slug: "ai-video-editing",
-    name: "AI Video Editing",
-    year: 2024,
-    description:
-      "AI-powered video editing projects including UGC content with AI-generated subtitles, a short-form piece exploring AI's impact on creative jobs, and a product demo with motion graphics and animation.",
-    gradient: "from-violet-500 to-fuchsia-600",
-    videos: [],
-    localVideos: [
-      {
-        title: "UGC Short — AI Subtitles",
-        src: "/videos/ugc-short.mp4",
-        thumbnail: "/thumbnails/ai-ugc-short.jpg",
-        vertical: true,
-      },
-      {
-        title: "AI Will Take Your Job",
-        src: "/videos/ai-will-take-your-job.mp4",
-        thumbnail: "/thumbnails/ai-will-take-your-job.jpg",
-        vertical: true,
-      },
-      {
-        title: "Liany — Product Demo",
-        src: "/videos/liany-demo.mp4",
-        thumbnail: "/thumbnails/ai-liany-demo.jpg",
-      },
-    ],
   },
   {
     slug: "uptin",
@@ -200,7 +200,89 @@ export const projects: Project[] = [
 
 // Organic Reels
 export const organicReels: ReelItem[] = [
-  // Instagram Reels (thumbnail + external link)
+  // Uptin TikToks — English, with real metrics (ordered by likes)
+  {
+    title: "Why Is California's Crime Crisis Getting Worse?",
+    reelUrl: "https://www.tiktok.com/@uptin/video/7263029673741798689",
+    platform: "tiktok",
+    views: "-",
+    likes: "94.6K",
+    thumbnail: "/thumbnails/clip-california-crime.jpg",
+  },
+  {
+    title: "Why Is the US Passport Not the Strongest?",
+    reelUrl: "https://www.tiktok.com/@uptin/video/7278676090296519969",
+    platform: "tiktok",
+    views: "-",
+    likes: "78.5K",
+    thumbnail: "/thumbnails/clip-us-passport.jpg",
+  },
+  {
+    title: "$40 Day in Baghdad, Iraq",
+    reelUrl: "https://www.tiktok.com/@uptin/video/7336567074468236576",
+    platform: "tiktok",
+    views: "-",
+    likes: "44.9K",
+    thumbnail: "/thumbnails/clip-baghdad.jpg",
+  },
+  {
+    title: "Why Are UK Postal Codes So Complicated?",
+    reelUrl: "https://www.tiktok.com/@uptin/video/7283191025680551200",
+    platform: "tiktok",
+    views: "-",
+    likes: "42.4K",
+    thumbnail: "/thumbnails/clip-uk-postal-codes.jpg",
+  },
+  {
+    title: "$91 Day in Switzerland",
+    reelUrl: "https://www.tiktok.com/@uptin/video/7244165707900931354",
+    platform: "tiktok",
+    views: "-",
+    likes: "24.6K",
+    thumbnail: "/thumbnails/clip-switzerland.jpg",
+  },
+  {
+    title: "The Rise of Iraqi Money",
+    reelUrl: "https://www.tiktok.com/@uptin/video/7333649332702317857",
+    platform: "tiktok",
+    views: "-",
+    likes: "18.4K",
+    thumbnail: "/thumbnails/clip-iraqi-money.jpg",
+  },
+  {
+    title: "$50 Day in Bangkok, Thailand",
+    reelUrl: "https://www.tiktok.com/@uptin/video/7276981255328075041",
+    platform: "tiktok",
+    views: "-",
+    likes: "12.5K",
+    thumbnail: "/thumbnails/clip-bangkok.jpg",
+  },
+  // Other Uptin Shorts — English (Google Drive)
+  {
+    title: "Dentist Scam",
+    platform: "youtube",
+    views: "-",
+    likes: "-",
+    reelUrl: "https://drive.google.com/file/d/1gk8ugbtvRvqGdxl7r_gIms6pyhlTDHw9/preview",
+    thumbnail: "/thumbnails/clip-dentist-scam.jpg",
+  },
+  {
+    title: "India's iPhone",
+    platform: "youtube",
+    views: "-",
+    likes: "-",
+    reelUrl: "https://drive.google.com/file/d/1UC41CRoMqiPynyh35Q0wrB1R2NsBn3E8/preview",
+    thumbnail: "/thumbnails/clip-indias-iphone.jpg",
+  },
+  {
+    title: "US Was Never #1",
+    platform: "youtube",
+    views: "-",
+    likes: "-",
+    reelUrl: "https://drive.google.com/file/d/1_S8FRpMoPBxS-5KM2KNvJB44F2rI-6S7/preview",
+    thumbnail: "/thumbnails/clip-us-was-never-1.jpg",
+  },
+  // Instagram Reels — Spanish
   {
     title: "Jaime Lorente — Reflexión sobre la Fe",
     reelUrl: "https://www.instagram.com/reel/DKc5BHwuUmp/",
@@ -232,39 +314,6 @@ export const organicReels: ReelItem[] = [
     views: "52K",
     likes: "3.7K",
     thumbnail: "/thumbnails/clip-blackmango.jpg",
-  },
-  // Uptin Shorts (thumbnail + Google Drive link)
-  {
-    title: "Dentist Scam",
-    platform: "youtube",
-    views: "-",
-    likes: "-",
-    reelUrl: "https://drive.google.com/file/d/1gk8ugbtvRvqGdxl7r_gIms6pyhlTDHw9/preview",
-    thumbnail: "/thumbnails/clip-dentist-scam.jpg",
-  },
-  {
-    title: "India's iPhone",
-    platform: "youtube",
-    views: "-",
-    likes: "-",
-    reelUrl: "https://drive.google.com/file/d/1UC41CRoMqiPynyh35Q0wrB1R2NsBn3E8/preview",
-    thumbnail: "/thumbnails/clip-indias-iphone.jpg",
-  },
-  {
-    title: "UK Postal Codes",
-    platform: "youtube",
-    views: "-",
-    likes: "-",
-    reelUrl: "https://drive.google.com/file/d/1C9SKp2hQ6YjOb-sF0c4IX5MTYicp1uvf/preview",
-    thumbnail: "/thumbnails/clip-uk-postal-codes.jpg",
-  },
-  {
-    title: "US Was Never #1",
-    platform: "youtube",
-    views: "-",
-    likes: "-",
-    reelUrl: "https://drive.google.com/file/d/1_S8FRpMoPBxS-5KM2KNvJB44F2rI-6S7/preview",
-    thumbnail: "/thumbnails/clip-us-was-never-1.jpg",
   },
   // Before & After (YouTube embed - horizontal)
   {
