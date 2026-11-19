@@ -42,7 +42,6 @@ export function ProjectsGrid({
                   <h3 className="text-lg font-semibold tracking-tight">
                     {project.name}
                   </h3>
-                  <span className="text-sm text-black/40">{project.year}</span>
                 </div>
               </div>
             </button>

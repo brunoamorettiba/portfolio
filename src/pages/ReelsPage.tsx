@@ -192,9 +192,6 @@ export function ReelsPage({
 
           {/* Header */}
           <FadeIn>
-            <div className="flex items-center gap-4 mb-4">
-              <span className="text-sm text-black/40">2024</span>
-            </div>
             <h1 className="text-4xl md:text-7xl font-bold tracking-tighter mb-6">
               Shorts / <span className="text-black/40">Reels</span>
             </h1>

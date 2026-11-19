@@ -54,9 +54,6 @@ export function ProjectPage({
 
           {/* Header */}
           <FadeIn>
-            <div className="flex items-center gap-4 mb-4">
-              <span className="text-sm text-black/40">{project.year}</span>
-            </div>
             <h1 className="text-4xl md:text-7xl font-bold tracking-tighter mb-6">
               {project.name}
             </h1>
@@ -265,7 +262,6 @@ export function ProjectPage({
                   />
                   <div className="p-4">
                     <h3 className="text-sm font-semibold">{p.name}</h3>
-                    <span className="text-xs text-black/40">{p.year}</span>
                   </div>
                 </button>
               </FadeIn>
